@@ -90,10 +90,12 @@ print_flags(struct addrinfo *aip)
 			printf(" numhost");
 		if (aip->ai_flags & AI_NUMERICSERV)
 			printf(" numserv");
+#ifndef NETBSD
 		if (aip->ai_flags & AI_V4MAPPED)
 			printf(" v4mapped");
 		if (aip->ai_flags & AI_ALL)
 			printf(" all");
+#endif
 	}
 }
 

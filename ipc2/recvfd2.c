@@ -2,10 +2,14 @@
 #include <sys/socket.h>		/* struct msghdr */
 #include <sys/un.h>
 
-#if defined(SCM_CREDS)			/* BSD interface */
+#if defined(SCM_CREDS) && !defined(NETBSD)			/* BSD interface */
 #define CREDSTRUCT		cmsgcred
 #define CR_UID			cmcred_uid
 #define SCM_CREDTYPE	SCM_CREDS
+#elif defined(NETBSD)
+#define CREDSTRUCT              sockcred
+#define CR_UID                  sc_uid
+#define SCM_CREDTYPE            SCM_CREDS
 #elif defined(SCM_CREDENTIALS)	/* Linux interface */
 #define CREDSTRUCT		ucred
 #define CR_UID			uid

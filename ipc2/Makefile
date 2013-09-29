@@ -5,6 +5,9 @@ include $(ROOT)/Make.defines.$(PLATFORM)
 ifeq "$(PLATFORM)" "freebsd"
   EXTRALIBS=-pthread
 endif
+ifeq "$(PLATFORM)" "netbsd"
+  EXTRALIBS=-pthread
+endif
 ifeq "$(PLATFORM)" "linux"
   EXTRALIBS=-pthread
 endif
@@ -19,6 +22,9 @@ ifeq "$(PLATFORM)" "linux"
 	FDPASS = recvfd2.o sendfd2.o
 endif
 ifeq "$(PLATFORM)" "freebsd"
+	FDPASS = recvfd2.o sendfd2.o
+endif
+ifeq "$(PLATFORM)" "netbsd"
 	FDPASS = recvfd2.o sendfd2.o
 endif
 

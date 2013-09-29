@@ -7,7 +7,9 @@ BAR =
 ifeq "$(PLATFORM)" "macos"
   TLOCK =
   EXTRALIBS=-pthread
-else
+else ifeq "$(PLATFORM)" "netbsd"
+  TLOCK=
+else 
   TLOCK = timedlock
 endif
 ifeq "$(PLATFORM)" "linux"
@@ -18,6 +20,11 @@ ifeq "$(PLATFORM)" "freebsd"
   BAR = barrier
   EXTRALIBS=-pthread
 endif
+ifeq "$(PLATFORM)" "netbsd"
+  BAR = barrier
+  EXTRALIBS=-pthread -lrt 
+  endif
+
 ifeq "$(PLATFORM)" "solaris"
   BAR = barrier
   EXTRALIBS=-lpthread -lrt

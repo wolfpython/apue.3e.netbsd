@@ -1,4 +1,7 @@
 #include "apue.h"
+#ifdef NETBSD
+#include <sys/types.h>
+#endif
 #include <sys/socket.h>		/* struct msghdr */
 
 /* size of control buffer to send/recv one file descriptor */

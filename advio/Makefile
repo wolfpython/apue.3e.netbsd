@@ -5,6 +5,9 @@ include $(ROOT)/Make.defines.$(PLATFORM)
 ifeq "$(PLATFORM)" "linux"
   EXTRALIBS=-lrt
 endif
+ifeq "$(PLATFORM)" "netbsd"
+  EXTRALIBS=-lrt
+endif
 ifeq "$(PLATFORM)" "solaris"
   EXTRALIBS=-lrt
 endif

@@ -1,9 +1,12 @@
 #include "apue.h"
 #include <sys/socket.h>
 
-#if defined(SCM_CREDS)			/* BSD interface */
+#if defined(SCM_CREDS) && !defined(NETBSD)			/* FreeBSD interface */
 #define CREDSTRUCT		cmsgcred
 #define SCM_CREDTYPE	SCM_CREDS
+#elif defined(NETBSD) 
+#define CREDSTRUCT                sockcred
+#define SCM_CREDTYPE    SCM_CREDS 
 #elif defined(SCM_CREDENTIALS)	/* Linux interface */
 #define CREDSTRUCT		ucred
 #define SCM_CREDTYPE	SCM_CREDENTIALS

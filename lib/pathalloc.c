@@ -10,6 +10,9 @@ static long	pathmax = 0;
 
 static long	posix_version = 0;
 static long	xsi_version = 0;
+#ifdef NETBSD 
+#define _SC_XOPEN_VERSION 9
+#endif
 
 /* If PATH_MAX is indeterminate, no guarantee this is adequate */
 #define	PATH_MAX_GUESS	1024

@@ -7,6 +7,12 @@ ifeq "$(PLATFORM)" "freebsd"
   FMEM = fmemopen.o
   EXTRALIBS=-pthread
 endif
+ifeq "$(PLATFORM)" "netbsd"
+  GETPW = getpw44bsd
+  #netbsd 6.0 has fmmopen,while freebsd 8 does not,check it later in 9
+  #FMEM = fmemopen.o
+  EXTRALIBS=-pthread
+endif
 ifeq "$(PLATFORM)" "linux"
   GETPW = getpwsvr4
   FMEM =

@@ -17,6 +17,9 @@ endif
 ifeq "$(PLATFORM)" "freebsd"
   EXTRALD=-R.
 endif
+ifeq "$(PLATFORM)" "netbsd"
+  EXTRALD=-R.
+endif
 ifeq "$(PLATFORM)" "macos"
   EXTRALD=-R.
 endif

@@ -11,6 +11,9 @@ case `uname -s` in
 "FreeBSD")
 	PLATFORM="freebsd"
 	;;
+"NetBSD")
+	PLATFORM="netbsd"
+	;;
 "Linux")
 	PLATFORM="linux"
 	;;

@@ -1,7 +1,9 @@
 #include <string.h>
 #include <errno.h>
 #include <pthread.h>
-#include <stdlib.h>
+#ifndef NETBSD
+#include <stdlib.h> 
+#endif
 
 extern char **environ;
 
