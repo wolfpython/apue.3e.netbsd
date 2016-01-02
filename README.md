@@ -4,8 +4,6 @@
 ```c
     #define _SC_XOPEN_VERSION 9
 ```
-
-
 1. getenv_r is in stdlib.h,so comment it out
 
 1. as far as cmsgcred(freebsd) is concernd, netbsd has sockcred.
