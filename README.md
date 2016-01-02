@@ -25,10 +25,10 @@ u_char
 
 We need gmake on netbsd.
 
-    ```shell
-    pkgin install gmake
-    gmake
-    ```
+```shell
+    $ pkgin install gmake
+    $ gmake
+```
 
 ## Origin README part
 Read the file called DISCLAIMER.
