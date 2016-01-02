@@ -21,6 +21,14 @@ u_char
 1. add a new Makefile.defines.netbsd file
 
 
+## How to build
+
+We need gmake on netbsd.
+
+    ```shell
+    pkgin install gmake
+    gmake
+    ```
 
 ## Origin README part
 Read the file called DISCLAIMER.
