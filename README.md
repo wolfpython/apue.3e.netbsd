@@ -1,7 +1,8 @@
 ##README for NetBSD
 
 1. NetBSD 6 & 7 seems not have _SC_XOPEN_VERSION, defined it manually
-#define _SC_XOPEN_VERSION 9
+
+    #define _SC_XOPEN_VERSION 9
 
 
 1. getenv_r is in stdlib.h,so comment it out
