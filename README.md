@@ -1,9 +1,11 @@
 ##README for NetBSD
 
 1. NetBSD 6 & 7 seems not have _SC_XOPEN_VERSION, defined it manually
+
     ```c
     #define _SC_XOPEN_VERSION 9
     ```
+
 1. getenv_r is in stdlib.h,so comment it out
 
 1. as far as cmsgcred(freebsd) is concernd, netbsd has sockcred.
